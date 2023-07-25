@@ -8,10 +8,10 @@ Currently in early development, I've implemented add, delete and get modules for
 Will add more if I find the time / need.
 
 ## Requirements
-- Python 3.10
+- Python 3.8.10
 - Python modules:
   - 'requests'
-- Ansible 2.9.10 (could work with earlier but I tested with this version)
+- Ansible 2.9.6 (could work with earlier but I tested with this version)
 
 ## Installation
 ```ansible-galaxy collection install federstedt.librenms```
@@ -40,4 +40,37 @@ Sample for getting all devices:
    - name: Dump output
      ansible.builtin.debug:
       msg: '{{ testout }}'
+```
+Add device:
+```
+- name: Example librenms add device.
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Post device to LibreNMS
+     federstedt.librenms.libre_devices:
+      state: present
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
+      hostname: localhost.localdomain
+      snmpver: v1
+      community: public
+      force_add: true
+```
+Delete device:
+```
+- name: Example librenms delete device.
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Delete device from LibreNMS
+     federstedt.librenms.libre_devices:
+      state: absent
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
+      hostname: localhost.localdomain
 ```

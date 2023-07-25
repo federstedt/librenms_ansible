@@ -1,4 +1,4 @@
-- name: Test librenms add device.
+- name: Example librenms add device.
   hosts: localhost
   vars_files:
     - vars/libre.yml

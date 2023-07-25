@@ -1,4 +1,4 @@
-- name: Test librenms get
+- name: Example librenms get
   hosts: localhost
   vars_files:
     - vars/libre.yml

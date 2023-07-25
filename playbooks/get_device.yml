@@ -1,12 +1,13 @@
 - name: Example librenms get
   hosts: localhost
+  gather_facts: false
   vars_files:
     - vars/libre.yml
   tasks:
    - name: Get a specific device.
-     libre_devices_info:
-      api_url: {{ api_url }}
-      api_token: {{ api_token }}
+     federstedt.librenms.libre_devices_info:
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
       name: 1.1.1.1
      register: device_info
    - name: Print output

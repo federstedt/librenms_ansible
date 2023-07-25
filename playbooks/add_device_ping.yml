@@ -1,13 +1,14 @@
 - name: Example librenms add device.
   hosts: localhost
+  gather_facts: false
   vars_files:
     - vars/libre.yml
   tasks:
    - name: Add a device to LibreNMS
-     libre_devices:
+     federstedt.librenms.libre_devices:
       state: present
-      api_url: {{ api_url }}
-      api_token: {{ api_token }}
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
       snmp_disable: true
       name: 8.8.8.8
       snmpver: v3

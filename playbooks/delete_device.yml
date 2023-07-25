@@ -1,11 +1,12 @@
 - name: Example librenms delete device.
   hosts: localhost
+  gather_facts: false
   vars_files:
     - vars/libre.yml
   tasks:
    - name: Delete device from LibreNMS
-     libre_devices:
+     federstedt.librenms.libre_devices:
       state: absent
-      api_url: {{ api_url }}
-      api_token: {{ api_token }}
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
       hostname: localhost.localdomain

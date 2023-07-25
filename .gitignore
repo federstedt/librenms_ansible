@@ -3,3 +3,4 @@ env_*/
 .vscode/
 playbooks/vars/*
 tests/output/
+*.tar.gz

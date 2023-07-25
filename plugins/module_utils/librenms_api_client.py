@@ -2,7 +2,6 @@
 REST-API Client for librenms.
 https://docs.librenms.org/API/Devices/#endpoint-categories
 """
-import json
 import requests
 
 class LibreAPIError(Exception):

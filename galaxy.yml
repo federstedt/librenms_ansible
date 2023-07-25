@@ -56,6 +56,7 @@ issues: https://github.com/federstedt/librenms_ansible/issues
 build_ignore:
 - playbooks/vars
 - '*.tar.gz'
+- .vscode/
 # A dict controlling use of manifest directives used in building the collection artifact. The key 'directives' is a
 # list of MANIFEST.in style
 # L(directives,https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands). The key

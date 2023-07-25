@@ -1,0 +1,13 @@
+- name: Test librenms get
+  hosts: localhost
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Get a list of all devices.
+     libre_devices_info:
+      api_url: {{ api_url }}
+      api_token: {{ api_token }}
+     register: testout
+   - name: Dump output
+     ansible.builtin.debug:
+      msg: '{{ testout }}'

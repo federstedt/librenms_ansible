@@ -1,0 +1,11 @@
+- name: Test librenms delete device.
+  hosts: localhost
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Delete device from LibreNMS
+     libre_devices:
+      state: absent
+      api_url: {{ api_url }}
+      api_token: {{ api_token }}
+      hostname: localhost.localdomain

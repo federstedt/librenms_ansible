@@ -1,0 +1,14 @@
+- name: Test librenms add device.
+  hosts: localhost
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Post device to LibreNMS
+     libre_devices:
+      state: present
+      api_url: {{ api_url }}
+      api_token: {{ api_token }}
+      hostname: localhost.localdomain
+      snmpver: v1
+      community: public
+      force_add: true

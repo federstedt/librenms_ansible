@@ -1,0 +1,10 @@
+{
+    "docs": "https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/pylint.html", 
+    "results": [
+        {
+            "message": "The test `ansible-test sanity --test pylint` [[explain](https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/pylint.html)] failed with 8 errors:", 
+            "output": "plugins/module_utils/libre_utils.py:29:66: trailing-whitespace: Trailing whitespace\nplugins/module_utils/libre_utils.py:31:0: trailing-whitespace: Trailing whitespace\nplugins/module_utils/libre_utils.py:48:66: trailing-whitespace: Trailing whitespace\nplugins/module_utils/libre_utils.py:81:73: trailing-whitespace: Trailing whitespace\nplugins/module_utils/librenms_api_client.py:28:35: trailing-whitespace: Trailing whitespace\nplugins/module_utils/librenms_api_client.py:81:57: trailing-whitespace: Trailing whitespace\nplugins/modules/libre_devices_info.py:106:66: trailing-whitespace: Trailing whitespace\nplugins/modules/libre_devices_info.py:110:51: trailing-whitespace: Trailing whitespace"
+        }
+    ], 
+    "verified": false
+}

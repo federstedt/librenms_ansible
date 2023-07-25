@@ -1,0 +1,10 @@
+{
+    "docs": "https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/compile.html", 
+    "results": [
+        {
+            "message": "The test `ansible-test sanity --test compile --python 2.7` [[explain](https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/compile.html)] failed with 4 errors:", 
+            "output": "plugins/module_utils/libre_utils.py:24:27: SyntaxError: def validate_args(params) ->bool:\nplugins/module_utils/librenms_api_client.py:11:45: SyntaxError: def __init__(self, status_code, details)->None:\nplugins/modules/libre_devices.py:220:27: SyntaxError: def device_delete(params) -> dict:\nplugins/modules/libre_devices_info.py:101:24: SyntaxError: def device_get(params) ->dict:"
+        }
+    ], 
+    "verified": false
+}

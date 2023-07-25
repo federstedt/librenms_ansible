@@ -1,0 +1,10 @@
+{
+    "docs": "https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/import.html", 
+    "results": [
+        {
+            "message": "The test `ansible-test sanity --test import --python 2.7` [[explain](https://docs.ansible.com/ansible-core/2.14/dev_guide/testing/sanity/import.html)] failed with 4 errors:", 
+            "output": "plugins/module_utils/libre_utils.py:24:27: traceback: SyntaxError: invalid syntax\nplugins/module_utils/librenms_api_client.py:11:45: traceback: SyntaxError: invalid syntax\nplugins/modules/libre_devices.py:220:27: traceback: SyntaxError: invalid syntax\nplugins/modules/libre_devices_info.py:101:24: traceback: SyntaxError: invalid syntax"
+        }
+    ], 
+    "verified": false
+}

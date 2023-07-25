@@ -175,12 +175,13 @@ data:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.librenms_api_client import LibreClient, LibreAPIError
-from ansible.module_utils.libre_utils import (
+from ansible_collections.federstedt.librenms.plugins.module_utils.librenms_api_client import LibreClient, LibreAPIError
+from ansible_collections.federstedt.librenms.plugins.module_utils.libre_utils import (
     get_required_args,
     validate_args,
     parse_json,
 )
+
 
 # define available arguments/parameters a user can pass to the module
 module_args = {

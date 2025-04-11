@@ -1,0 +1,21 @@
+- name: Get devices from LibreNMS
+  hosts: localhost
+  vars_files:
+    - vars/libre.yml
+  tasks:
+   - name: Get a list of generic OS devices.
+     federstedt.librenms.libre_devices_info:
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
+      query_params:
+       - type: os
+       - query: generic
+     register: devs
+
+   - name: Delete devices
+     federstedt.librenms.libre_devices:
+      api_url: "{{ api_url }}"
+      api_token: "{{ api_token }}"
+      state: absent
+      hostname: '{{ item.device_id }}' #hostname can be hostname or id
+     loop: '{{ devs.data.devices }}'

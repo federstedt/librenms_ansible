@@ -23,8 +23,15 @@ Will add more if I find the time / need.
 ## Usage
 See playbooks/ in github repo for more examples.
 
-Sample for getting **all devices**:
+Example of vars file, libre.yml.
+You do *not* need to specify /api/v0 etc, only protocol and url to the server.
+```yaml
+api_url: https://librenms.federstedt.se
+api_token: yourapitokengoeshere
 ```
+
+Sample for getting **all devices**:
+```yaml
 - name: Example librenms get
   hosts: localhost
   gather_facts: false
@@ -41,7 +48,7 @@ Sample for getting **all devices**:
       msg: '{{ testout }}'
 ```
 **Add device**:
-```
+```yaml
 - name: Example librenms add device.
   hosts: localhost
   gather_facts: false
@@ -59,7 +66,7 @@ Sample for getting **all devices**:
       force_add: true
 ```
 **Delete device**:
-```
+```yaml
 - name: Example librenms delete device.
   hosts: localhost
   gather_facts: false
@@ -77,7 +84,7 @@ Sample for getting **all devices**:
 Doing filtered searches on libreNMS is not that straightforward at the moment.  
 Use this as referense: https://docs.librenms.org/API/Devices/#input  
 Follow above link and set type and query as documented. In my tests multiple filters would not work.
-```
+```yaml
 - name: Example librenms get
   hosts: localhost
   gather_facts: false
